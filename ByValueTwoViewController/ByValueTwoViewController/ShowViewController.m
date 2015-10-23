@@ -122,8 +122,8 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"valueStrChangedNotification" object:str4];
     }
     
-    
-    
+    // 是哪个按钮
+    self.handler (tag);
     
 }
 

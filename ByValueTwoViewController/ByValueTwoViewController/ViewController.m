@@ -34,6 +34,16 @@
         main.label.text = strChanged;
     };
     
+    [self.showViewController setHandler:^(NSInteger tag){
+        NSLog(@"是哪个按钮，tag=%@", tag);
+    }];
+    /**
+    self.showViewController.handler = ^(NSInteger tag){
+        NSLog(@"是哪个按钮，tag=%@", tag);
+    };
+    */
+
+    
     // kvo 的监听  特点：代码简洁，耦合性低,但一次只能传一个值，要记得remove
     [self.showViewController addObserver:self forKeyPath:@"values_str" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     NSLog(@"kvo");

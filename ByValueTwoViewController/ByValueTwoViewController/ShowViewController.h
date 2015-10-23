@@ -10,6 +10,10 @@
 
 typedef void (^StringChangedBlock) (NSString *strChanged, NSString *error);
 
+typedef void (^CompleteHandler)(NSInteger tag);
+
+
+
 @protocol ValueChangedDelegate <NSObject>
 
 @optional
@@ -34,6 +38,8 @@ typedef void (^StringChangedBlock) (NSString *strChanged, NSString *error);
 
 // block
 @property (nonatomic, copy) StringChangedBlock stringChangedBlock;
+
+@property (copy, nonatomic) CompleteHandler handler;
 
 
 
